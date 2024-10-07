@@ -14,7 +14,7 @@ import time
 import folium 
 
 
-from branca.element import Template, MacroElement
+# from branca.element import Template, MacroElement
 from folium.plugins import MarkerCluster, HeatMap, HeatMapWithTime
 from streamlit_folium import folium_static
 from streamlit_folium import st_folium
