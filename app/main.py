@@ -47,13 +47,6 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-try:
-    # check if the key exists in session state
-    _ = st.session_state.keep_graphics
-except AttributeError:
-    # otherwise set it to false
-    st.session_state.keep_graphics = False
-
 
 with st.sidebar:
 	selected = option_menu(
