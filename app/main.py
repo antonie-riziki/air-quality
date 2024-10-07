@@ -12,7 +12,8 @@ import time
 import folium 
 
 
-# from branca.element import Template, MacroElement
+from streamlit.components.v1 import html
+from branca.element import Template, MacroElement
 from folium.plugins import MarkerCluster, HeatMap, HeatMapWithTime
 from streamlit_folium import folium_static
 from streamlit_folium import st_folium
@@ -530,17 +531,21 @@ elif selected == 'Mapping':
 	df2.dropna(axis=0, inplace=True)
 
 	# -------------------- Heatmap ------------------- #
-	m = folium.Map(location=[df2['lat'].mean(), df2['lng'].mean()], zoom_start=2, width='100%', height='100')
+	m = folium.Map(location=[df2['lat'].mean(), df2['lng'].mean()], zoom_start=2, width='100%', height='100%', tiles="OpenStreetMap", control_scale=True, no_wrap=True)
 
 	heat_data = [[df2['lat'], df2['lng'], df2['AQI Value']] for index, df2 in df2.iterrows()]
-
+	test_data = [[45.5236, -122.6750, 0.5], [37.7749, -122.4194, 0.8]]
+	
 	# Add heatmap to the map
-	HeatMap(heat_data, radius=15, max_zoom=12).add_to(m)
+	# folium.Marker([df2['lat'].mean(), df2['lng'].mean()], popup="Center").add_to(m)
+	HeatMap(heat_data, max_zoom=2, radius=15).add_to(m)
 
 	# Display the map in Streamlit
-	folium_static(m)
+	# folium_static(m)
 
-
+	# Export to HTML and display in Streamlit
+	map_html = m._repr_html_()
+	st.components.v1.html(map_html, height=500)
 
 
 	col1, col2 = st.columns(2)
