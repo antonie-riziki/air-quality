@@ -5,8 +5,6 @@ import seaborn as sb
 import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
-import autoreload
-import sys
 import os
 import csv
 import prophet
@@ -91,7 +89,7 @@ if selected == 'Home':
 		
 		''')
 	
-	image_file = '../source/air1.jpg'
+	image_file = 'source/air1.jpg'
 
 	st.image(image_file)
 
@@ -123,7 +121,7 @@ if selected == 'Home':
 		''')
 
 
-	image_file = '../source/clean1.jpg'
+	image_file = 'source/clean1.jpg'
 
 	st.image(image_file)
 
@@ -133,7 +131,7 @@ elif selected == 'Analysis':
 			# :chart_with_upwards_trend: EXPLORATORY DATA ANALYSIS ON AIR QUALITY
 		''')
 
-	st.image('../source/air2.jpg')
+	st.image('source/air2.jpg')
 
 	st.write('''
 			### Dataset Overview
@@ -154,28 +152,28 @@ elif selected == 'Analysis':
 		''')
 
 	# Data Date Dataset Download
-	df1 = pd.read_csv(r'../source/data_date.csv', encoding='utf-8')
+	df1 = pd.read_csv(r'source/data_date.csv', encoding='utf-8')
 
 	df1_data = df1.to_csv(index=False).encode('utf-8')
 	st.dataframe(df1.head())
 
-	with open("../source/data_date.csv", "rb") as file:
+	with open("source/data_date.csv", "rb") as file:
 		st.download_button(label = 'download csv file', data = df1_data, file_name = "data_date.csv", mime='text/csv')
 
 	# Air Quality Index for each country
-	df2 = pd.read_csv(r'../source/AQI and Lat Long of Countries.csv', encoding='utf-8')
+	df2 = pd.read_csv(r'source/AQI and Lat Long of Countries.csv', encoding='utf-8')
 	df2_data = df2.to_csv(index=False).encode('utf-8')
 	st.dataframe(df2.head())
 
-	with open("../source/AQI and Lat Long of Countries.csv", "rb") as file:
+	with open("source/AQI and Lat Long of Countries.csv", "rb") as file:
 		st.download_button(label = 'download csv file', data = df2_data, file_name = "AQI and Lat Long of Countries.csv", mime='text/csv')
 
 	# Air Quality vs Health Impact Dataset
-	df3 = pd.read_csv(r'../source/air_quality_health_impact_data.csv', encoding='utf-8')
+	df3 = pd.read_csv(r'source/air_quality_health_impact_data.csv', encoding='utf-8')
 	df3_data = df3.to_csv(index=False).encode('utf-8')
 	st.dataframe(df3.head())
 
-	with open("../source/air_quality_health_impact_data.csv", "rb") as file:
+	with open("source/air_quality_health_impact_data.csv", "rb") as file:
 		st.download_button(label = 'download csv file', data = df3_data, file_name = "air_quality_health_impact_data.csv", mime='text/csv')
 
 
@@ -359,7 +357,7 @@ elif selected == 'Analysis':
 		    st.info(f'Mean squared error: {mean_sq_er}', icon="ℹ️")
 		    st.info(f'Mean absolute error: {mean_ab_er}', icon="ℹ️")
 
-		    st.image("../source/imppact.jpg")
+		    st.image("source/imppact.jpg")
 
 
 
@@ -527,7 +525,7 @@ elif selected == 'Mapping':
 		### Mapping Air Quality Index after GIS Analysis
 		''')
 
-	df2 = pd.read_csv(r'../source/AQI and Lat Long of Countries.csv', encoding='utf-8')
+	df2 = pd.read_csv(r'source/AQI and Lat Long of Countries.csv', encoding='utf-8')
 
 	df2.dropna(axis=0, inplace=True)
 
