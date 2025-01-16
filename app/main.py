@@ -541,47 +541,6 @@ elif selected == 'Mapping':
 	# folium.Marker([df2['lat'].mean(), df2['lng'].mean()], popup="Center").add_to(m)
 	HeatMap(heat_data, max_zoom=2, radius=15).add_to(m)
 
-
-	# --------------------------------------------------------------------#
-	
-	marker_cluster = MarkerCluster(popup='Locations', icon_create_function="""
-	        function(cluster) {
-	            return L.divIcon({
-	                html: '<div style="background-color: #2e86c1; color: white; border-radius: 50%; padding: 5px; display: flex; align-items: center; justify-content: center;">' + cluster.getChildCount() + '</div>',
-	                className: 'marker-cluster',
-	                iconSize: new L.Point(40, 40)
-	            });
-	        }
-	    """).add_to(m)
-
-    # Loop through the African data and plot each city
-    for idx, row in africa_data.iterrows():
-	popup_info = (f"City: {row['City']}, {row['Country']}<br>"
-		      f"AQI Value: {row['AQI Value']}<br>"
-		      f"AQI Category: {row['AQI Category']}<br>"
-		      f"CO: {row['CO AQI Value']} µg/m³<br>"
-		      f"Ozone: {row['Ozone AQI Value']} µg/m³<br>"
-		      f"NO2: {row['NO2 AQI Value']} µg/m³")
-
-	# Determine marker color based on AQI category
-	category = row['AQI Category']
-	marker_color = aqi_colors.get(category, 'gray')
-
-	# Add a marker for each city with a popup
-	folium.map.Marker(
-	    location=[row['lat'], row['lng']],
-	    icon=folium.DivIcon(
-		html=f"""<div style="font-size: 10px; color: black; background-color: {marker_color}; border-radius: 50%; width: 25px; height: 25px; display: flex; align-items: center; justify-content: center;">
-						{int(row['AQI Value'])}
-					     </div>"""),
-	    popup=folium.Popup(popup_info, max_width=300)
-	).add_to(marker_cluster)
-
-
-
-
-	# ---------------------------------------------------------------------- #
-
 	# Display the map in Streamlit
 	# folium_static(m)
 
@@ -631,7 +590,7 @@ elif selected == 'Mapping':
 		        location=[row['lat'], row['lng']],
 		        radius=row['AQI Value'] / 10,  
 		        popup=folium.Popup(popup_info, max_width=300),
-		        color='blue',
+		        color=aqi_colors,
 		        fill=True,
 		        fill_color='blue',
 		        fill_opacity=0.7
