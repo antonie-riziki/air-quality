@@ -531,7 +531,7 @@ elif selected == 'Mapping':
 	
 	# Add heatmap to the map
 	# folium.Marker([df2['lat'].mean(), df2['lng'].mean()], popup="Center").add_to(m)
-	HeatMapWithTime(heat_data, max_zoom=2, radius=15).add_to(m)
+	HeatMap(heat_data, max_zoom=2, radius=15).add_to(m)
 
 	# Display the map in Streamlit
 	# folium_static(m)
@@ -557,7 +557,15 @@ elif selected == 'Mapping':
 		m = folium.Map(location=[get_grouped_country['lat'].mean(), get_grouped_country['lng'].mean()], zoom_start=6)
 
 		# Add marker cluster to handle multiple points
-		marker_cluster = MarkerCluster().add_to(m)
+		marker_cluster = MarkerCluster(popup='Locations', icon_create_function="""
+            function(cluster) {
+                return L.divIcon({
+                    html: '<div style="background-color: #2e86c1; color: white; border-radius: 50%; padding: 5px; display: flex; align-items: center; justify-content: center;">' + cluster.getChildCount() + '</div>',
+                    className: 'marker-cluster',
+                    iconSize: new L.Point(40, 40)
+                });
+            }
+        """).add_to(m)
 
 		# Loop through each row in the dataframe and plot the points
 		for idx, row in get_grouped_country.iterrows():
@@ -590,7 +598,15 @@ elif selected == 'Mapping':
 			m = folium.Map(location=[group_city['lat'].mean(), group_city['lng'].mean()], zoom_start=6)
 
 			# Add marker cluster to handle multiple points
-			marker_cluster = MarkerCluster().add_to(m)
+			marker_cluster = MarkerCluster(popup='Locations', icon_create_function="""
+            function(cluster) {
+                return L.divIcon({
+                    html: '<div style="background-color: #2e86c1; color: white; border-radius: 50%; padding: 5px; display: flex; align-items: center; justify-content: center;">' + cluster.getChildCount() + '</div>',
+                    className: 'marker-cluster',
+                    iconSize: new L.Point(40, 40)
+                });
+            }
+        """).add_to(m)
 
 			# Loop through each row in the dataframe and plot the points
 			for idx, row in group_city.iterrows():
