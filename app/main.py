@@ -534,7 +534,7 @@ elif selected == 'Mapping':
 	HeatMap(heat_data, max_zoom=2, radius=15).add_to(m)
 
 	# Display the map in Streamlit
-	# folium_static(m)
+	folium_static(m)
 
 	# Export to HTML and display in Streamlit
 	map_html = m._repr_html_()
