@@ -561,56 +561,57 @@ elif selected == 'Mapping':
 	# 	group_city = get_grouped_country[get_grouped_country['City'] == city_list]
 
 	if any(get_grouped_country):
-		    # Create a base map
-		    m = folium.Map(location=[get_grouped_country['lat'].mean(), get_grouped_country['lng'].mean()], zoom_start=6)
 		
-		    # Add marker cluster to handle multiple points
-		    marker_cluster = MarkerCluster(popup='Locations', icon_create_function="""
-		        function(cluster) {
-		            return L.divIcon({
-		                html: '<div style="background-color: #2e86c1; color: white; border-radius: 50%; padding: 5px; display: flex; align-items: center; justify-content: center;">' + cluster.getChildCount() + '</div>',
-		                className: 'marker-cluster',
-		                iconSize: new L.Point(40, 40)
-		            });
-		        }
-		    """).add_to(m)
-		
-		    # Define the AQI color mapping
-		    aqi_colors = {
-		        'Good': 'green',
-		        'Moderate': 'orange',
-		        'Unhealthy for Sensitive Groups': '#FF6865',
-		        'Unhealthy': 'red',
-		        'Very Unhealthy': '#DA70D6',
-		        'Hazardous': 'purple'
-		    }
-		
-		    # Loop through each row in the dataframe and plot the points
-		    for idx, row in get_grouped_country.iterrows():
-		        # Determine marker color based on AQI Category
-		        marker_color = aqi_colors.get(row['AQI Category'], 'gray')  # Default to gray if category not found
-		
-		        # Information to display in the popup
-		        popup_info = (f"City: {row['City']}<br>"
-		                      f"AQI Value: {row['AQI Value']}<br>"
-		                      f"AQI Category: {row['AQI Category']}<br>"
-		                      f"Ozone AQI Value: {row['Ozone AQI Value']}<br>"
-		                      f"NO2 AQI Value: {row['NO2 AQI Value']}<br>"
-		                      f"PM2.5 AQI Value: {row['PM2.5 AQI Value']}")
-		
-		        # Add CircleMarker with appropriate color and size
-		        folium.CircleMarker(
-		            location=[row['lat'], row['lng']],
-		            radius=row['AQI Value'] / 10,  # Scale radius based on AQI value
-		            popup=folium.Popup(popup_info, max_width=300),
-		            color=marker_color,
-		            fill=True,
-		            fill_color=marker_color,
-		            fill_opacity=0.7
-		        ).add_to(marker_cluster)
-		
-		    # Display the map in Streamlit
-		    folium_static(m)
+	    	# Create a base map
+	    	m = folium.Map(location=[get_grouped_country['lat'].mean(), get_grouped_country['lng'].mean()], zoom_start=6)
+	
+	    	# Add marker cluster to handle multiple points
+	    	marker_cluster = MarkerCluster(popup='Locations', icon_create_function="""
+			function(cluster) {
+		    		return L.divIcon({
+				html: '<div style="background-color: #2e86c1; color: white; border-radius: 50%; padding: 5px; display: flex; align-items: center; justify-content: center;">' + cluster.getChildCount() + '</div>',
+				className: 'marker-cluster',
+				iconSize: new L.Point(40, 40)
+		    	});
+			}
+	    	""").add_to(m)
+	
+	    	# Define the AQI color mapping
+	    	aqi_colors = {
+			'Good': 'green',
+			'Moderate': 'orange',
+			'Unhealthy for Sensitive Groups': '#FF6865',
+			'Unhealthy': 'red',
+			'Very Unhealthy': '#DA70D6',
+			'Hazardous': 'purple'
+	    	}
+	
+	    	# Loop through each row in the dataframe and plot the points
+	    	for idx, row in get_grouped_country.iterrows():
+			# Determine marker color based on AQI Category
+			marker_color = aqi_colors.get(row['AQI Category'], 'gray')  # Default to gray if category not found
+	
+			# Information to display in the popup
+			popup_info = (f"City: {row['City']}<br>"
+			      f"AQI Value: {row['AQI Value']}<br>"
+			      f"AQI Category: {row['AQI Category']}<br>"
+			      f"Ozone AQI Value: {row['Ozone AQI Value']}<br>"
+			      f"NO2 AQI Value: {row['NO2 AQI Value']}<br>"
+			      f"PM2.5 AQI Value: {row['PM2.5 AQI Value']}")
+	
+			# Add CircleMarker with appropriate color and size
+			folium.CircleMarker(
+		    		location=[row['lat'], row['lng']],
+		    		radius=row['AQI Value'] / 10,  # Scale radius based on AQI value
+		    		popup=folium.Popup(popup_info, max_width=300),
+		    		color=marker_color,
+		    		fill=True,
+		    		fill_color=marker_color,
+		    		fill_opacity=0.7
+			).add_to(marker_cluster)
+	
+	    	# Display the map in Streamlit
+	    	folium_static(m)
 
 		city_list = st.selectbox("Select a city", get_grouped_country['City'].sort_values())
 		group_city = get_grouped_country[get_grouped_country['City'] == city_list]
