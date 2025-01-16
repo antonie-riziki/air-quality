@@ -556,26 +556,26 @@ elif selected == 'Mapping':
 
     # Loop through the African data and plot each city
     for idx, row in africa_data.iterrows():
-        popup_info = (f"City: {row['City']}, {row['Country']}<br>"
-                      f"AQI Value: {row['AQI Value']}<br>"
-                      f"AQI Category: {row['AQI Category']}<br>"
-                      f"CO: {row['CO AQI Value']} µg/m³<br>"
-                      f"Ozone: {row['Ozone AQI Value']} µg/m³<br>"
-                      f"NO2: {row['NO2 AQI Value']} µg/m³")
+	popup_info = (f"City: {row['City']}, {row['Country']}<br>"
+		      f"AQI Value: {row['AQI Value']}<br>"
+		      f"AQI Category: {row['AQI Category']}<br>"
+		      f"CO: {row['CO AQI Value']} µg/m³<br>"
+		      f"Ozone: {row['Ozone AQI Value']} µg/m³<br>"
+		      f"NO2: {row['NO2 AQI Value']} µg/m³")
 
-        # Determine marker color based on AQI category
-        category = row['AQI Category']
-        marker_color = aqi_colors.get(category, 'gray')
+	# Determine marker color based on AQI category
+	category = row['AQI Category']
+	marker_color = aqi_colors.get(category, 'gray')
 
-        # Add a marker for each city with a popup
-        folium.map.Marker(
-            location=[row['lat'], row['lng']],
-            icon=folium.DivIcon(
-                html=f"""<div style="font-size: 10px; color: black; background-color: {marker_color}; border-radius: 50%; width: 25px; height: 25px; display: flex; align-items: center; justify-content: center;">
-                                                {int(row['AQI Value'])}
-                                             </div>"""),
-            popup=folium.Popup(popup_info, max_width=300)
-        ).add_to(marker_cluster)
+	# Add a marker for each city with a popup
+	folium.map.Marker(
+	    location=[row['lat'], row['lng']],
+	    icon=folium.DivIcon(
+		html=f"""<div style="font-size: 10px; color: black; background-color: {marker_color}; border-radius: 50%; width: 25px; height: 25px; display: flex; align-items: center; justify-content: center;">
+						{int(row['AQI Value'])}
+					     </div>"""),
+	    popup=folium.Popup(popup_info, max_width=300)
+	).add_to(marker_cluster)
 
 
 
