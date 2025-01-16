@@ -587,7 +587,7 @@ elif selected == 'Mapping':
 	    	}
                 
                 # Loop through each row in the dataframe and plot the points
-                for idx, row in get_grouped_country.iterrows():
+		for idx, row in get_grouped_country.iterrows():
 			# Determine marker color based on AQI Category
 			marker_color = aqi_colors.get(row['AQI Category'], 'gray')  # Default to gray if category not found
 			
