@@ -5,7 +5,6 @@ import seaborn as sb
 import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
-import autoreload
 import sys
 import os
 import csv
