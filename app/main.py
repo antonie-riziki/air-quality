@@ -530,11 +530,11 @@ elif selected == 'Mapping':
 	test_data = [[45.5236, -122.6750, 0.5], [37.7749, -122.4194, 0.8]]
 	
 	# Add heatmap to the map
-	# folium.Marker([df2['lat'].mean(), df2['lng'].mean()], popup="Center").add_to(m)
+	folium.Marker([df2['lat'].mean(), df2['lng'].mean()], popup="Center").add_to(m)
 	HeatMap(heat_data, max_zoom=2, radius=15).add_to(m)
 
 	# Display the map in Streamlit
-	folium_static(m)
+	# folium_static(m)
 
 	# Export to HTML and display in Streamlit
 	map_html = m._repr_html_()
