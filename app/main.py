@@ -76,12 +76,10 @@ if selected == 'Home':
 		The United Nations Sustainable Development Goals are a series of targets designed to promote human development and protect the environment. Two of the goals concern gender equality and climate action. While most people might consider these two topics to be quite disparate, they are actually closely related. Your challenge is to model the relationship between climate change and gender inequality, and propose a solution that promotes equality and action to support sustainable development for all.''')
 
 	members = {
-    'Member name': ['Faith Waithera', 'Veronica', 'Victor', 'Laurent', 'Faith Chemutai', 'Antonie'],
-    'Gender': ['Female', 'Female', 'Male', 'Male', 'Female', 'Male'],
-    'Tech Stack': ['Javascript, React', 'Python, ML, Blockchain, DS, Flutter', 'Python, Django, ML, Cyber Sec', 
-                   'Python, Django, Cyber Sec', 'Python, ML, Blockchain, DS', 'Python, Django, ML & DS, IoT'],
-    'Team name': ['EchoMinds Innovation', 'EchoMinds Innovation', 'EchoMinds Innovation', 'EchoMinds Innovation',
-    				'EchoMinds Innovation', 'EchoMinds Innovation']
+    'Member name': ['Faith Waithera',  'Antonie'],
+    'Gender': ['Female', 'Male'],
+    'Tech Stack': ['Javascript, React',  'ML, AI & DS, IoT, Python, Django'],
+    'Team name': ['EchoMinds Innovation', 'EchoMinds Innovation']
                    }
 	st.dataframe(members)
 
