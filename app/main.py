@@ -590,7 +590,7 @@ elif selected == 'Mapping':
 	    	for idx, row in get_grouped_country.iterrows():
 			# Determine marker color based on AQI Category
 			marker_color = aqi_colors.get(row['AQI Category'], 'gray')  # Default to gray if category not found
-	
+			
 			# Information to display in the popup
 			popup_info = (f"City: {row['City']}<br>"
 			      f"AQI Value: {row['AQI Value']}<br>"
@@ -598,7 +598,7 @@ elif selected == 'Mapping':
 			      f"Ozone AQI Value: {row['Ozone AQI Value']}<br>"
 			      f"NO2 AQI Value: {row['NO2 AQI Value']}<br>"
 			      f"PM2.5 AQI Value: {row['PM2.5 AQI Value']}")
-	
+			
 			# Add CircleMarker with appropriate color and size
 			folium.CircleMarker(
 		    		location=[row['lat'], row['lng']],
