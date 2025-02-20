@@ -67,15 +67,17 @@ with st.sidebar:
 # ------------------------------------------------- Home section ----------------------------------------------------------#
 
 if selected == 'Home':
-	st.write( '''
-		# :earth_africa: NASA SPACE APPS CHALLENGE 2024
+	# st.write( '''
+	# 	# :earth_africa: NASA SPACE APPS CHALLENGE 2024
 
-		## Gender and Climate 
+	# 	## Gender and Climate 
 
-		### About the Challenge
-		The United Nations Sustainable Development Goals are a series of targets designed to promote human development and protect the environment. Two of the goals concern gender equality and climate action. While most people might consider these two topics to be quite disparate, they are actually closely related. Your challenge is to model the relationship between climate change and gender inequality, and propose a solution that promotes equality and action to support sustainable development for all.''')
+	# 	### About the Challenge
+	# 	The United Nations Sustainable Development Goals are a series of targets designed to promote human development and protect the environment. Two of the goals concern gender equality and climate action. While most people might consider these two topics to be quite disparate, they are actually closely related. Your challenge is to model the relationship between climate change and gender inequality, and propose a solution that promotes equality and action to support sustainable development for all.''')
 	
 	st.write('''
+ 		# :earth_africa: One-Pager Concept for EcoMine Solutions Platform
+   
 		Context of the Problem:
 		1. Environmental Impact:
 		   - Challenge: Mining operations in East Africa often lead to significant environmental degradation, including air and water pollution, soil erosion, and deforestation.
@@ -148,12 +150,12 @@ if selected == 'Home':
 		- Month 9-10: Conduct user testing and refine the platform.
 
 	''')
-	members = {
-    'Member name': ['Faith Waithera',  'Antonie'],
-    'Gender': ['Female', 'Male'],
-    'Tech Stack': ['Javascript, React',  'ML, AI & DS, IoT, Python, Django'],
-    'Team name': ['EchoMinds Innovation', 'EchoMinds Innovation']
-                   }
+	# members = {
+ #    'Member name': ['Faith Waithera',  'Antonie'],
+ #    'Gender': ['Female', 'Male'],
+ #    'Tech Stack': ['Javascript, React',  'ML, AI & DS, IoT, Python, Django'],
+ #    'Team name': ['EchoMinds Innovation', 'EchoMinds Innovation']
+ #                   }
 	st.dataframe(members)
 
 	st.write('''
@@ -167,30 +169,30 @@ if selected == 'Home':
 
 	# st.video(video_url, format="pollution/mp4", start_time=0, *, subtitles=None, end_time=None, loop=False, autoplay=False, muted=False)
 	
-	st.write('''
-		#### Understanding Air Pollution
-		Air pollution consists of harmful or poisonous substances in outdoor or indoor air. It is harmful to people even if they do not have lung disease, but it is particularly dangerous for people living with asthma, COPD, and other respiratory ailments.
+	# st.write('''
+	# 	#### Understanding Air Pollution
+	# 	Air pollution consists of harmful or poisonous substances in outdoor or indoor air. It is harmful to people even if they do not have lung disease, but it is particularly dangerous for people living with asthma, COPD, and other respiratory ailments.
 
-		Despite progress in recent years, air pollution continues to be a serious environmental and health problem. The Chicago metropolitan region continues to violate federal air quality standards for harmful ozone and still faces threats from particulate matter pollution. The U.S. Environmental Protection Agency also ranks poor indoor air quality among the top five environmental risks to public health.
+	# 	Despite progress in recent years, air pollution continues to be a serious environmental and health problem. The Chicago metropolitan region continues to violate federal air quality standards for harmful ozone and still faces threats from particulate matter pollution. The U.S. Environmental Protection Agency also ranks poor indoor air quality among the top five environmental risks to public health.
 
-		#### What is the air quality forecast for Kenya?
-		In early 2021, the capital city of Nairobi was classed as the dirtiest city in Kenya with a US AQI reading of 73. With a figure such as this, the air quality can be classed as “Moderate” according to recommendations by the World Health Organisation (WHO). The city which recorded the second worse level was Ngong in the Kajiado region.
+	# 	#### What is the air quality forecast for Kenya?
+	# 	In early 2021, the capital city of Nairobi was classed as the dirtiest city in Kenya with a US AQI reading of 73. With a figure such as this, the air quality can be classed as “Moderate” according to recommendations by the World Health Organisation (WHO). The city which recorded the second worse level was Ngong in the Kajiado region.
 
-		The cleanest city was Lodwar in the Turkana region with a “Good” air quality.
+	# 	The cleanest city was Lodwar in the Turkana region with a “Good” air quality.
 
-		#### Where does the information come from that records Kenya’s polluted air?
-		Gases such as sulphur dioxide, nitrogen dioxide and carbon monoxide are a result of burning fossil fuels. If inhaled by humans, these gases can significantly affect the amount of oxygen entering the bloodstream, which can have devastating effects.
+	# 	#### Where does the information come from that records Kenya’s polluted air?
+	# 	Gases such as sulphur dioxide, nitrogen dioxide and carbon monoxide are a result of burning fossil fuels. If inhaled by humans, these gases can significantly affect the amount of oxygen entering the bloodstream, which can have devastating effects.
 
-		Methane is a gas produced by the burning of oil and the decomposition of organic materials at waste filling sites. It can also come from the digestion of cattle and other livestock.
+	# 	Methane is a gas produced by the burning of oil and the decomposition of organic materials at waste filling sites. It can also come from the digestion of cattle and other livestock.
 
-		Additionally, the satellite can monitor aerosol particles that are formed by oil combustion, forest fires, desert dust, or volcanic eruptions. This new data on air pollution access has the potential to improve air pollution coverage and enable governments, especially in developing countries, and other stakeholders to make the impact of poor air quality on human health and the environment a priority better to solve the problem.
+	# 	Additionally, the satellite can monitor aerosol particles that are formed by oil combustion, forest fires, desert dust, or volcanic eruptions. This new data on air pollution access has the potential to improve air pollution coverage and enable governments, especially in developing countries, and other stakeholders to make the impact of poor air quality on human health and the environment a priority better to solve the problem.
 
-		Currently, the USA and the UK are assisting Kenya in its fight with air pollution but through the use of relatively low-tech devices. Using data available from such satellites all governments will have access to data which will allow then to devise new policies aimed at making cleaner air available to its citizens.
+	# 	Currently, the USA and the UK are assisting Kenya in its fight with air pollution but through the use of relatively low-tech devices. Using data available from such satellites all governments will have access to data which will allow then to devise new policies aimed at making cleaner air available to its citizens.
 
-		#### Impact of our Solution
-		we hope to create a system that provides realtime information of air quality data across Kenya and Africa at large, the soltion focuses on clean air initiatives to empower women, protect their health, and create opportunities for sustainable livelihoods, while also helping mitigate climate change impacts.
-		Also having access to realtime air quality data captured and analyzed by our IoT sensors for the purpose of information access
-		''')
+	# 	#### Impact of our Solution
+	# 	we hope to create a system that provides realtime information of air quality data across Kenya and Africa at large, the soltion focuses on clean air initiatives to empower women, protect their health, and create opportunities for sustainable livelihoods, while also helping mitigate climate change impacts.
+	# 	Also having access to realtime air quality data captured and analyzed by our IoT sensors for the purpose of information access
+	# 	''')
 
 
 	image_file = './source/clean1.jpg'
