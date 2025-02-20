@@ -76,9 +76,9 @@ if selected == 'Home':
 	# 	The United Nations Sustainable Development Goals are a series of targets designed to promote human development and protect the environment. Two of the goals concern gender equality and climate action. While most people might consider these two topics to be quite disparate, they are actually closely related. Your challenge is to model the relationship between climate change and gender inequality, and propose a solution that promotes equality and action to support sustainable development for all.''')
 	
 	st.write('''
- 		# :earth_africa: One-Pager Concept for EcoMine Solutions Platform
+ 		## :earth_africa: One-Pager Concept for EcoMine Solutions Platform
    
-		Context of the Problem:
+		#### Context of the Problem:
 		1. Environmental Impact:
 		   - Challenge: Mining operations in East Africa often lead to significant environmental degradation, including air and water pollution, soil erosion, and deforestation.
 		   - Regulatory Pressure: Increasingly stringent environmental regulations require mining companies to adopt sustainable practices and monitor their environmental impact.
@@ -91,7 +91,7 @@ if selected == 'Home':
 		   - Challenge: Many mining companies lack the tools to monitor and manage their environmental impact effectively, leading to inefficiencies and potential legal issues.
 		   - Demand for Solutions: There is a growing demand for affordable, accessible, and comprehensive environmental monitoring solutions.
 		
-		 Solution Viability:
+		 #### Solution Viability:
 		1. Real-Time Monitoring:
 		   - IoT Sensors: Utilize IoT sensors to provide real-time data on air quality, water quality, and soil health, enabling proactive management of environmental impact.
 		   - Dashboard: Develop a user-friendly dashboard for real-time data visualization, helping companies make informed decisions.
@@ -112,7 +112,7 @@ if selected == 'Home':
 		   - Role-Based Access: Define user roles (Admin, Manager, Viewer) to ensure appropriate access levels.
 		   - Authentication: Implement secure login with multi-factor authentication to protect sensitive data.
 		
-		 Technical Specifications:
+		 #### Technical Specifications:
 		- Frontend:
 		  - Framework: React.js
 		  - UI/UX: Responsive design with a focus on usability.
@@ -125,7 +125,7 @@ if selected == 'Home':
 		  - Hosting: AWS or Azure for scalability and reliability.
 		  - Security: Implement robust security protocols to protect data.
 		
-		 Milestones:
+		 #### Milestones:
 		1. Phase 1:
 		   - Develop and integrate IoT sensors.
 		   - Build the core dashboard with real-time data visualization.
@@ -138,11 +138,11 @@ if selected == 'Home':
 		   - Create stakeholder portal and feedback mechanism.
 		   - Finalize user management and authentication.
 		
-		 Deliverables:
+		 #### Deliverables:
 		- Prototype: A functional prototype showcasing real-time monitoring and basic alerts.
 		- Documentation: Comprehensive documentation for developers and end-users.
 		
-		 Timeline:
+		 #### Timeline:
 		- Month 1-2: Design and develop the frontend and backend.
 		- Month 3-4: Integrate IoT sensors and implement the dashboard.
 		- Month 5-6: Develop and test the alert system and API.
