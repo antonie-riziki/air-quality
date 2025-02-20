@@ -148,8 +148,8 @@ if selected == 'Home':
 		- Month 5-6: Develop and test the alert system and API.
 		- Month 7-8: Finalize stakeholder portal and user management.
 		- Month 9-10: Conduct user testing and refine the platform.
-
-	''')
+  ''')
+	
 	# members = {
  #    'Member name': ['Faith Waithera',  'Antonie'],
  #    'Gender': ['Female', 'Male'],
