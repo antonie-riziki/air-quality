@@ -156,7 +156,7 @@ if selected == 'Home':
  #    'Tech Stack': ['Javascript, React',  'ML, AI & DS, IoT, Python, Django'],
  #    'Team name': ['EchoMinds Innovation', 'EchoMinds Innovation']
  #                   }
-	st.dataframe(members)
+	# st.dataframe(members)
 
 	st.write('''
 		## :milky_way: AIR POLLUTION
